@@ -19,6 +19,6 @@ class PageController extends Controller
     }
 
     public function contact() {
-        return view('contact-us', ['title' => '- Contact Page', 'status' => 'active']);
+        return view('contact', ['title' => '- Contact Page', 'status' => 'active']);
     }
 }
