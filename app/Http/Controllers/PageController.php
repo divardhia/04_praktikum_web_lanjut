@@ -1,8 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Member;
+use App\Models\Partner;
+use App\Models\Product;
 
 use Illuminate\Http\Request;
+
+
 
 class PageController extends Controller
 {
@@ -11,14 +16,14 @@ class PageController extends Controller
     }
 
     public function product() {
-        return view('product', ['title' => '- Products Page', 'status' => 'active']);
+        return view('product', ['products' =>Product::product(), 'title' => '- Products Page', 'status' => 'active']);
     }
 
     public function about() {
-        return view('about', ['title' => '- About Page', 'status' => 'active']);
+        return view('about', ['partners' =>Partner::partner(), 'members' => Member::index(), 'title' => '- About Page', 'status' => 'active']);
     }
 
     public function contact() {
-        return view('contact', ['title' => '- Contact Page', 'status' => 'active']);
+        return view('contact', ['partners' =>Partner::partner(), 'title' => '- Contact Page', 'status' => 'active']);
     }
 }
